@@ -1,0 +1,21 @@
+{% for paper in site.data.publications.published %}
+<div class="profile-publication{% if paper.image %} profile-publication--with-image{% endif %}">
+  {% if paper.image %}
+  <a class="profile-publication__figure" href="{{ paper.image | relative_url }}" target="_blank" rel="noopener" aria-label="View the full-size figure for {{ paper.title | escape }}" title="View full-size figure">
+    <img src="{{ paper.image | relative_url }}" alt="{{ paper.image_alt | escape }}" width="{{ paper.image_width }}" height="{{ paper.image_height }}" loading="lazy" decoding="async">
+  </a>
+  {% endif %}
+  <div class="profile-publication__body">
+  <p class="profile-publication__venue">{{ paper.venue | escape }}</p>
+  <h3><a href="{{ paper.paper | escape }}">{{ paper.title | escape }}</a></h3>
+  <div class="profile-publication__authors">{{ paper.authors | markdownify }}</div>
+  <div class="profile-publication__links">
+    <a href="{{ paper.paper | escape }}">Paper</a>
+    <a href="{{ paper.pdf | escape }}">PDF</a>
+    <a href="{{ paper.code | escape }}">Code</a>
+    <span class="profile-entry__detail">{{ paper.note | escape }}</span>
+  </div>
+  </div>
+</div>
+{% endfor %}
+

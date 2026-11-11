@@ -1,0 +1,9 @@
+{% if include.logos %}
+<div class="profile-entry__logos{% if include.logos.size > 1 %} profile-entry__logos--stacked{% endif %}">
+  {% for logo in include.logos %}
+  <a class="profile-entry__logo-link" href="{{ logo.url | escape }}" title="{{ logo.name | escape }} homepage">
+    <img class="profile-entry__logo" src="{{ logo.image | relative_url }}" alt="{{ logo.name | escape }}" width="64" height="64" loading="lazy" decoding="async">
+  </a>
+  {% endfor %}
+</div>
+{% endif %}

@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<div id="main" role="main" class="personal-homepage cv-page">
+  {% include sidebar.html %}
+  <article class="page profile-page" aria-labelledby="cv-title">
+    <div class="page__inner-wrap">
+      <header>
+        <h1 id="cv-title" class="page__title"><span class="profile-section-icon" aria-hidden="true">📄</span> Curriculum Vitae</h1>
+      </header>
+      <div class="page__content">
+        {{ content }}
+      </div>
+    </div>
+  </article>
+</div>

@@ -1,0 +1,13 @@
+published:
+  - title: "ScopeBench: Evaluating Cultural Norm Scope Awareness in LLMs"
+    authors: 'Haojun Liang\*, Ziwei Zhao\*, **Chenyu Li**, Qiyue Zhao, Rongduomijia Mu, Yulan Shen, Yu Gu, Chen Zhang, Kairui Zhang, Yanbiao Ma, and Wenxuan Wang'
+    venue: "EMNLP 2026 · Main Conference"
+    note: "* Equal contribution."
+    paper: "https://aclanthology.org/2026.emnlp-main.1224/"
+    pdf: "https://aclanthology.org/2026.emnlp-main.1224.pdf"
+    code: "https://github.com/HAOJUN-LIANG/ScopeBench"
+    image: "/images/publications/scopebench-dataset-map.png"
+    image_alt: "ScopeBench dataset coverage by country and cultural cluster"
+    image_width: 4176
+    image_height: 2194
+

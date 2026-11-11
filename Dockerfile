@@ -1,5 +1,5 @@
 # Base image: Ruby with necessary dependencies for Jekyll
-FROM ruby:3.2
+FROM ruby:3.3
 
 # Install dependencies
 RUN apt-get update && apt-get install -y \
@@ -32,4 +32,4 @@ RUN gem install bundler:2.3.26
 RUN bundle install
 
 # Command to serve the Jekyll site
-CMD ["jekyll", "serve", "-H", "0.0.0.0", "-w", "--config", "_config.yml,_config_docker.yml"]
+CMD ["bundle", "exec", "jekyll", "serve", "-H", "0.0.0.0", "-w", "--force_polling", "--config", "_config.yml,_config_docker.yml"]

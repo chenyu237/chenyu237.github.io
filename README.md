@@ -1,103 +1,90 @@
-# Academic Pages
-**Academic Pages is a GitHub Pages template for personal and professional portfolio-oriented websites.**
+# Chenyu Li's academic homepage
 
-![Academic Pages template example](images/themes/homepage-light.png "Academic Pages template example")
+Personal website built with [Academic Pages](https://github.com/academicpages/academicpages.github.io), Jekyll, and GitHub Pages.
 
-# Getting Started
+The homepage contains About Me, Research Interests, Education, Publications, Honors & Awards, and Selected Experience. Experience entries combine academic and industry roles, with the role, institution and group in the title, followed by dates, a short research description, and advisor links.
 
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Click the "Use this template" button in the top right.
-1. On the "New repository" page, enter your public repository name as "[your GitHub username].github.io", which will also be your website's URL.
-1. Edit site-wide configuration in `_config.yml` and double check that the `url` is the one that you just selected in the previous step and that `repository` reflects the correct path for your repository.
-1. Add your site content, upload any files (like PDFs, .zip files, etc.) to the `files/` directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.
-1. Check status by going to the repository settings, under: Settings -> Pages -> Source: GitHub Actions
-1. (Optional) Use the Jupyter notebooks or python scripts in the `markdown_generator` folder to generate markdown files for publications and talks from a TSV file.
+## Update content
 
-See more info at https://academicpages.github.io/
+| Content | File |
+| --- | --- |
+| Name, affiliation, email, LinkedIn, avatar, site URL | `_config.yml` |
+| About Me and Research Interests | `_pages/about.md` |
+| Education, honors, and experience | `_data/profile.yml` |
+| Publications | `_data/publications.yml` |
+| CV PDF and its preview page | `CV.pdf`, `_pages/cv.html`, `assets/cv/chenyu-li-cv-preview.png` |
+| Section navigation | `_data/navigation.yml` |
+| Homepage layout and styling | `_layouts/homepage.html`, `_sass/layout/_profile.scss` |
 
-### Additional Tutorials
+To add a portrait, place it in `images/` and set `author.avatar` in `_config.yml` to its filename. The site displays initials when no image is set.
 
-Additional tutorials for working with the Academic Pages template can be found at the following sites:
-- https://jayrobwilliams.com/posts/2020/06/academic-website/
+The current `images/chenyu-li.jpg` preserves the supplied photo. `author.avatar_crop` enables a circular CSS crop that removes its outer dark margin. The crop coordinates in `_sass/layout/_profile.scss` are specific to this photo; disable that setting or adjust the crop when replacing it.
 
-## Running locally
+Education and experience entries support a `logos` list with `name`, `image`, and `url`. Logos are stored locally under `images/institutions/` and link to the corresponding institution or lab. Experience entries may also set `group_url` to link the lab or department name.
 
-When you are initially working on your website, it is very useful to be able to preview the changes locally before pushing them to GitHub. To work locally you will need to:
+The supplied `CV.pdf` is published unchanged and linked from `/cv/`. The CV page displays a full-page preview and offers direct PDF viewing and downloading. Both the navigation and author sidebar link to this page. The original template's example CV page and sample files remain excluded from the generated site.
 
-1. Clone the repository and made updates as detailed above.
+After replacing the current one-page `CV.pdf`, regenerate its preview with Poppler before deploying, so the preview and downloadable file stay in sync:
 
-### Using a different IDE
-1. Make sure you have ruby-dev, bundler, and nodejs installed
-    
-    On most Linux distributions and [Windows Subsystem Linux](https://learn.microsoft.com/en-us/windows/wsl/about) the command is:
-    ```bash
-    sudo apt install ruby-dev ruby-bundler nodejs
-    ```
-    If you see error `Unable to locate package ruby-bundler`, `Unable to locate package nodejs `, run the following:
-    ```bash
-    sudo apt update && sudo apt upgrade -y
-    ```
-    then try running `sudo apt install ruby-dev ruby-bundler nodejs` again.
-
-    On MacOS the commands are:
-    ```bash
-    brew install ruby
-    brew install node
-    gem install bundler
-    ```
-1. Run `bundle install` to install ruby dependencies. If you get errors, delete Gemfile.lock and try again.
-
-    If you see file permission error like `Fetching bundler-2.6.3.gem ERROR:  While executing gem (Gem::FilePermissionError) You don't have write permissions for the /var/lib/gems/3.2.0 directory.` or `Bundler::PermissionError: There was an error while trying to write to /usr/local/bin.`
-    Install Gems Locally (Recommended):
-    ```bash
-    bundle config set --local path 'vendor/bundle'
-    ```
-    then try run `bundle install` again. If succeeded, you should see a folder called `vendor` and `.bundle`.
-
-1. Run `npm run build` to generate the minimized version of the JavaScript files used by the template. This command will create the file `assets/js/main.min.js`, which is excluded from the repository in favor of building the minimized JavaScript on GitHub as part of the deployment process.
-
-1. Run `jekyll serve -l -H localhost` to generate the HTML and serve it from `localhost:4000` the local server will automatically rebuild and refresh the pages on change to Markdown (*.md) and HTML files, while changes to the core template and configuration (i.e., `_config.yml`) will require stopping and restarting Jekyll.
-    You may also try `bundle exec jekyll serve -l -H localhost` to ensure jekyll to use specific dependencies on your own local machine.
-
-If you are running on Linux it may be necessary to install some additional dependencies prior to being able to run locally: `sudo apt install build-essential gcc make`
-
-## Using Docker
-
-Working from a different OS, or just want to avoid installing dependencies? You can use the provided `Dockerfile` to build a container that will run the site for you if you have [Docker](https://www.docker.com/) installed.
-
-You can build and execute the container by running the following command in the repository:
-
-```bash
-chmod -R 777 .
-docker compose up
+```powershell
+pdftoppm -f 1 -singlefile -r 144 -png CV.pdf assets/cv/chenyu-li-cv-preview
 ```
 
-You should now be able to access the website from `localhost:4000`.
+If the CV grows beyond one page, add previews for the additional pages and update the page images and their alt text in `_pages/cv.html`.
 
-### Using the DevContainer in VS Code
+## Preview on Windows with Docker
 
-If you are using [Visual Studio Code](https://code.visualstudio.com/) you can use the [Dev Container](https://code.visualstudio.com/docs/devcontainers/containers) that comes with this Repository. Normally VS Code detects that a development container configuration is available and asks you if you want to use the container. If this doesn't happen you can manually start the container by **F1->DevContainer: Reopen in Container**. This restarts your VS Code in the container and automatically hosts your academic page locally on http://localhost:4000. All changes will be updated live to that page after a few seconds.
+Prerequisites: Node.js and a running Docker Desktop.
 
-# Maintenance
+From this repository, run:
 
-Bug reports and feature requests to the template should be [submitted via GitHub](https://github.com/academicpages/academicpages.github.io/issues/new/choose). For questions concerning how to style the template, please feel free to start a [new discussion on GitHub](https://github.com/academicpages/academicpages.github.io/discussions).
+```powershell
+npm.cmd install
+npm.cmd run build
+docker compose up --build
+```
 
-This repository was forked (then detached) by [Stuart Geiger](https://github.com/staeiou) from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/), which is © 2016 Michael Rose and released under the MIT License (see LICENSE.md). It is currently being maintained by [Robert Zupko](https://github.com/rjzupkoii), and additional maintainers would be welcome.
+Open http://127.0.0.1:4000/. Stop the server with Ctrl+C, then run `docker compose down`.
 
-## Bugfixes and enhancements
+Markdown and style edits rebuild automatically. Restart the container after changing `_config.yml`. After JavaScript changes, run `npm.cmd run build` again.
 
-If you have bugfixes and enhancements that you would like to submit as a pull request, you will need to [fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) this repository as opposed to using it as a template. This will also allow you to [synchronize your copy](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) of the template to your fork as well.
+Docker, the dev container, and GitHub Actions use Ruby 3.3. The Docker preview uses `_config_docker.yml` for the local site URL.
 
-Unfortunately, one logistical issue with a template theme like Academic Pages that makes it a little tricky to get bug fixes and updates to the core theme. If you use this template and customize it, you will probably get merge conflicts if you attempt to synchronize, although [rebasing](https://git-scm.com/docs/git-rebase) the changes from this template will work along with manually [cherry picking](https://git-scm.com/docs/git-cherry-pick) the relevant commits. If you are not comfortable with the Git command line, you can save your various `.yml` configuration files and Markdown files, delete the repository, and fork it again. 
+## Preview with Ruby installed locally
 
----
-<div align="center">
-    
-![pages-build-deployment](https://github.com/academicpages/academicpages.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)
-[![GitHub contributors](https://img.shields.io/github/contributors/academicpages/academicpages.github.io.svg)](https://github.com/academicpages/academicpages.github.io/graphs/contributors)
-[![GitHub release](https://img.shields.io/github/v/release/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io/releases/latest)
-[![GitHub license](https://img.shields.io/github/license/academicpages/academicpages.github.io?color=blue)](https://github.com/academicpages/academicpages.github.io/blob/master/LICENSE)
+```sh
+bundle install
+npm install
+npm run build
+bundle exec jekyll serve --host 127.0.0.1
+```
 
-[![GitHub stars](https://img.shields.io/github/stars/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io)
-[![GitHub forks](https://img.shields.io/github/forks/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io/fork)
-</div>
+## Publish to GitHub Pages
+
+The existing `.github/workflows/jekyll.yml` workflow builds and deploys pushes to `master`. Set the repository's Pages source to **GitHub Actions**. The public URL configured in `_config.yml` is https://chenyu237.github.io.
+
+## Content sources and layout references
+
+Personal facts, dates, advisors, and contact information come from the supplied CV. ScopeBench's publication details and links were checked against its [ACL Anthology entry](https://aclanthology.org/2026.emnlp-main.1224/).
+
+Academic homepage structure and concise presentation were informed by the homepages of [Yuxiao Ye](https://yeyuxiao.github.io/), [Zhenfei Yin](https://yinzhenfei.github.io/), and [Huanhuan Ma](https://www.huanhuanma.top/). Biographical text was written from Chenyu's own CV.
+
+The compact awards list and a single award icon were informed by [Hao Chen's homepage](https://hmarkc.github.io/) and [Renhao Zhang's homepage](https://renhaoz.github.io/). Award names, dates, institutions, and amounts are unchanged.
+
+The standalone CV page's preview and download/open controls were informed by [Jonas Frey's CV page](https://jonasfrey96.github.io/cv/) and [Bivek Pradhan's CV page](https://bivekpradhan.github.io/cv/).
+
+Institution and lab artwork was copied from the following sources, without recoloring or redrawing. THUNLP uses the image selected by Chenyu; the other assets come from official institution websites.
+
+| Local asset | Source |
+| --- | --- |
+| `thunlp-logo.png` | [THUNLP image supplied by Chenyu](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS1VhVhNiYAdOZCwIrn9ev_cW4xkNIwY0Ioowv37e8Qw&s=10) |
+| `aim3.png` | [AIM3 Lab website logo](https://www.ruc-aim3.com/assets/logo/aim3-logo.png) |
+| `oxford.png` | [Oxford website crest](https://www.cs.ox.ac.uk/apple-touch-icon-114x114.png) |
+| `microsoft.svg` | [Microsoft's downloadable symbol](https://learn.microsoft.com/en-us/entra/identity-platform/media/howto-add-branding-in-apps/ms-symbollockup_mssymbol_19.svg) |
+| `ut-austin.png` | [UT Austin website shield](https://www.utexas.edu/android-chrome-512x512.png) |
+| `liverpool.svg` | [University of Liverpool website shield](https://www.liverpool.ac.uk/rb/assets/icon.svg) |
+| `xjtlu.svg` | [Xi’an Jiaotong-Liverpool University website logo](https://www.xjtlu.edu.cn/wp-content/uploads/2024/01/en-header-logo.svg) |
+
+These marks identify the institutions mentioned in Chenyu's education and experience; their ownership remains with the respective institutions.
+
+Academic Pages derives from Michael Rose's Minimal Mistakes theme. The original [MIT license](LICENSE) is retained.

@@ -1,0 +1,12 @@
+{% assign entry = include.entry %}
+<div class="profile-entry profile-experience{% if entry.logos %} profile-entry--with-logo{% endif %}">
+  {% include personal-logos.html logos=entry.logos %}
+  <div class="profile-entry__body">
+  <div class="profile-entry__heading">
+    <h3>{{ entry.role | escape }} | {{ entry.institution | escape }}{% if entry.group %}, {% if entry.group_url %}<a href="{{ entry.group_url | escape }}">{{ entry.group | escape }}</a>{% else %}{{ entry.group | escape }}{% endif %}{% endif %}</h3>
+    <span class="profile-entry__date">{{ entry.dates | escape }}</span>
+  </div>
+  <p>Research on <strong>{{ entry.research | escape }}</strong></p>
+  <p><strong>{% if entry.advisors.size == 1 %}Advisor{% else %}Advisors{% endif %}:</strong> {% for advisor in entry.advisors %}<a href="{{ advisor.url | escape }}">{{ advisor.name | escape }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+  </div>
+</div>

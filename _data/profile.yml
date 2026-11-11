@@ -1,0 +1,100 @@
+# Content based on the supplied CV and the author's subsequent revisions.
+education:
+  - institution: "The University of Texas at Austin"
+    logos:
+      - name: "The University of Texas at Austin"
+        image: "/images/institutions/ut-austin.png"
+        url: "https://www.utexas.edu/"
+    program: "B.S. in Informatics"
+    dates: "Aug. 2026 – Aug. 2028 (expected)"
+    detail: "Human-Centered Data Science concentration"
+  - institution: "University of Liverpool & Xi’an Jiaotong-Liverpool University"
+    status: "transferred out"
+    logos:
+      - name: "University of Liverpool"
+        image: "/images/institutions/liverpool.svg"
+        url: "https://www.liverpool.ac.uk/"
+      - name: "Xi’an Jiaotong-Liverpool University"
+        image: "/images/institutions/xjtlu.svg"
+        url: "https://www.xjtlu.edu.cn/en"
+    program: "BSc Information and Computing Science"
+    dates: "Sept. 2024 – Jun. 2026"
+    detail: "GPA: 3.92/4.00"
+
+awards:
+  - year: 2026
+    title: "Stars of Tomorrow"
+    institution: "Microsoft Research Asia"
+  - year: 2025
+    title: "Continuing Academic Merit Scholarship"
+    institution: "Xi’an Jiaotong-Liverpool University"
+    amount: "¥93,000"
+  - year: 2025
+    title: "Summer Research Undergraduate Fellowship"
+    institution: "Xi’an Jiaotong-Liverpool University"
+    amount: "¥1,000"
+  - year: 2024
+    title: "President’s Entrance Scholarship"
+    institution: "Xi’an Jiaotong-Liverpool University"
+    amount: "¥93,000"
+
+experience:
+  - role: "Research Assistant"
+    institution: "Tsinghua University"
+    group: "THUNLP"
+    group_url: "https://nlp.csai.tsinghua.edu.cn/"
+    logos:
+      - name: "THUNLP, Tsinghua University"
+        image: "/images/institutions/thunlp-logo.png"
+        url: "https://nlp.csai.tsinghua.edu.cn/"
+    dates: "Jul. 2026 – Present"
+    research: "Social intelligence and legal AI."
+    advisors:
+      - name: "Yuxiao Ye"
+        url: "https://yeyuxiao.github.io/"
+      - name: "Huiyuan Xie"
+        url: "https://huiyuanxie.github.io/"
+      - name: "Zhiyuan Liu"
+        url: "https://nlp.csai.tsinghua.edu.cn/~lzy/"
+  - role: "Research Assistant"
+    institution: "University of Oxford"
+    group: "Department of Engineering Science"
+    group_url: "https://eng.ox.ac.uk/"
+    logos:
+      - name: "University of Oxford — Department of Engineering Science"
+        image: "/images/institutions/oxford.png"
+        url: "https://eng.ox.ac.uk/"
+    dates: "Oct. 2025 – Sept. 2026"
+    research: "LLM agents and computational social science."
+    advisors:
+      - name: "Zhenfei Yin"
+        url: "https://yinzhenfei.github.io/"
+  - role: "Research Assistant"
+    institution: "Renmin University of China"
+    group: "AIM3 Lab"
+    group_url: "https://www.ruc-aim3.com/"
+    logos:
+      - name: "AIM3 Lab, Renmin University of China"
+        image: "/images/institutions/aim3.png"
+        url: "https://www.ruc-aim3.com/"
+    dates: "Aug. 2025 – May 2026"
+    research: "Cultural LLMs."
+    advisors:
+      - name: "Wenxuan Wang"
+        url: "https://jarviswang94.github.io/index.html"
+
+  - role: "Research Intern"
+    institution: "Microsoft Research Asia"
+    group: "Social Computing Group"
+    group_url: "https://www.microsoft.com/en-us/research/group/social-computing-beijing/"
+    logos:
+      - name: "Microsoft Research Asia"
+        image: "/images/institutions/microsoft.svg"
+        url: "https://www.microsoft.com/en-us/research/lab/microsoft-research-asia/"
+    dates: "Mar. 2026 – Jul. 2026"
+    research: "Responsible AI and recommender systems."
+    advisors:
+      - name: "Fangzhao Wu"
+        url: "https://www.microsoft.com/en-us/research/people/fangzwu/"
+      - name: "Xing Xie"
+        url: "https://scholar.google.com/citations?user=5EQfAFIAAAAJ"

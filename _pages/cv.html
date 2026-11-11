@@ -1,0 +1,28 @@
+---
+layout: cv
+title: "CV"
+description: "Read and download Chenyu Li's curriculum vitae."
+permalink: /cv/
+author_profile: true
+body_class: cv-document
+pdf: /CV.pdf
+preview: /assets/cv/chenyu-li-cv-preview.png
+redirect_from:
+  - /resume
+  - /resume/
+---
+
+{% assign cv_version = site.time | date: "%s" %}
+{% assign pdf_url = page.pdf | relative_url | append: "?v=" | append: cv_version %}
+<div class="cv-actions" aria-label="CV document actions">
+  <a class="cv-action cv-action--primary" href="{{ pdf_url }}" download="Chenyu_Li_CV.pdf">
+    <i class="fas fa-download" aria-hidden="true"></i> Download PDF
+  </a>
+  <a class="cv-action" href="{{ pdf_url }}" target="_blank" rel="noopener" aria-label="Open CV PDF in a new tab">
+    <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i> Open PDF
+  </a>
+</div>
+
+<a class="cv-preview" href="{{ pdf_url }}" target="_blank" rel="noopener" aria-label="Open Chenyu Li's full CV as a PDF in a new tab">
+  <img src="{{ page.preview | relative_url }}?v={{ cv_version }}" alt="Chenyu Li's curriculum vitae, page 1 of 1. Open the PDF to read, zoom, or select text." width="1224" height="1584" fetchpriority="high" decoding="async">
+</a>
