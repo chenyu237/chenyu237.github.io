@@ -20,7 +20,7 @@ To add a portrait, place it in `images/` and set `author.avatar` in `_config.yml
 
 The current `images/chenyu-li.jpg` preserves the supplied photo. `author.avatar_crop` enables a circular CSS crop that removes its outer dark margin. The crop coordinates in `_sass/layout/_profile.scss` are specific to this photo; disable that setting or adjust the crop when replacing it.
 
-Education and experience entries support a `logos` list with `name`, `image`, and `url`. Logos are stored locally under `images/institutions/` and link to the corresponding institution or lab. Experience entries may also set `group_url` to link the lab or department name.
+Education and experience entries support a `logos` list with `name`, `image`, and `url`. Logos are stored locally under `images/institutions/` and link to the corresponding institution or lab. Logo groups use one horizontal row, with the compact Xi’an Jiaotong-Liverpool shield beside the Liverpool wordmark. On mobile, each logo group sits above the entry text. The optional `style` field supports wider wordmarks and CSS framing for crests with large white margins. Experience entries may also set `group_url` to link the lab or department name.
 
 The supplied `CV.pdf` is published unchanged and linked from `/cv/`. The CV page displays a full-page preview and offers direct PDF viewing and downloading. Both the navigation and author sidebar link to this page. The original template's example CV page and sample files remain excluded from the generated site.
 
@@ -73,17 +73,20 @@ The compact awards list and a single award icon were informed by [Hao Chen's hom
 
 The standalone CV page's preview and download/open controls were informed by [Jonas Frey's CV page](https://jonasfrey96.github.io/cv/) and [Bivek Pradhan's CV page](https://bivekpradhan.github.io/cv/).
 
-Institution and lab artwork was copied from the following sources without redrawing. THUNLP uses the image selected by Chenyu; the other assets come from official institution websites. The Liverpool shield retains its original blue variant, with the SVG's automatic white-on-dark override removed because the homepage displays logos on white backgrounds.
+Institution and lab artwork was copied from the following sources without redrawing. THUNLP, Liverpool, and Xi’an Jiaotong-Liverpool use images selected by Chenyu; the other displayed assets come from official institution websites. Source images are preserved; CSS frames excess white margins around the Liverpool wordmark and the Tsinghua and Renmin crests. AIM3 uses the complete official wordmark because the supplied thumbnail clipped the superscript 3. CSS displays the official white lettering in black while preserving the colored icon, with padding around the full mark. The Liverpool wordmark and compact Xi’an Jiaotong-Liverpool shield are vertically centered in one row and retain their original aspect ratios. Oxford uses its official combined department/university mark, which already places both marks side by side. Microsoft retains its institution symbol and the linked Social Computing Group name.
 
 | Local asset | Source |
 | --- | --- |
 | `thunlp-logo.png` | [THUNLP image supplied by Chenyu](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS1VhVhNiYAdOZCwIrn9ev_cW4xkNIwY0Ioowv37e8Qw&s=10) |
-| `aim3.png` | [AIM3 Lab website logo](https://www.ruc-aim3.com/assets/logo/aim3-logo.png) |
+| `tsinghua-emblem.jpg` | [Tsinghua official visual identity crest](https://vi.tsinghua.edu.cn/gk/xxbz/xh/bzjbzsy.htm) |
+| `aim3-wordmark.png` | [Complete AIM3 official wordmark](https://www.ruc-aim3.com/assets/logo/aim3-logo-all.png) |
+| `ruc-emblem.png` | [Renmin University official visual identity crest](https://www.ruc.edu.cn/template/1/out/imgs/VI/1.png) |
 | `oxford.png` | [Oxford website crest](https://www.cs.ox.ac.uk/apple-touch-icon-114x114.png) |
+| `oxford-engineering.svg` | [Oxford Department of Engineering Science logo](https://eng.ox.ac.uk/images/logo.svg) |
 | `microsoft.svg` | [Microsoft's downloadable symbol](https://learn.microsoft.com/en-us/entra/identity-platform/media/howto-add-branding-in-apps/ms-symbollockup_mssymbol_19.svg) |
-| `ut-austin.png` | [UT Austin website shield](https://www.utexas.edu/android-chrome-512x512.png) |
-| `liverpool-shield.svg` | [University of Liverpool website shield](https://www.liverpool.ac.uk/rb/assets/icon.svg) |
-| `xjtlu.svg` | [Xi’an Jiaotong-Liverpool University website logo](https://www.xjtlu.edu.cn/wp-content/uploads/2024/01/en-header-logo.svg) |
+| `ut-austin-wordmark.svg` | [UT Austin Brand Center](https://umac.utexas.edu/brand-center/university-csu-wordmarks/) · [official horizontal wordmark](https://umac.utexas.edu/wp-content/themes/bellmont/dist/images/utexas-primary-horizontal-logo.svg) |
+| `liverpool-selected.png` | [Liverpool image supplied by Chenyu](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgDsK6R-GlWvtoQljBjhJ-t560W1-eVRKpR93fuLvg2w&s=10) |
+| `xjtlu-shield.png` | Xi’an Jiaotong-Liverpool shield image supplied by Chenyu in chat |
 
 These marks identify the institutions mentioned in Chenyu's education and experience; their ownership remains with the respective institutions.
 

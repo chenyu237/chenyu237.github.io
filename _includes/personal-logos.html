@@ -1,8 +1,11 @@
 {% if include.logos %}
-<div class="profile-entry__logos{% if include.logos.size > 1 %} profile-entry__logos--stacked{% endif %}">
+<div class="profile-entry__logos">
   {% for logo in include.logos %}
-  <a class="profile-entry__logo-link" href="{{ logo.url | escape }}" title="{{ logo.name | escape }} homepage">
+  <a class="profile-entry__logo-link{% if logo.style %} profile-entry__logo-link--{{ logo.style | escape }}{% endif %}" href="{{ logo.url | escape }}" title="{{ logo.name | escape }} homepage">
     <img class="profile-entry__logo" src="{{ logo.image | relative_url }}" alt="{{ logo.name | escape }}" width="64" height="64" loading="lazy" decoding="async">
+    {% if logo.style == "aim3-wordmark" %}
+    <img class="profile-entry__logo profile-entry__logo-color" src="{{ logo.image | relative_url }}" alt="" aria-hidden="true" width="64" height="64" loading="lazy" decoding="async">
+    {% endif %}
   </a>
   {% endfor %}
 </div>

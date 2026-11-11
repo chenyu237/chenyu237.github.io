@@ -76,20 +76,27 @@ html { scroll-padding-top: 100px; }
 
 .profile-entry--with-logo {
   display: grid;
-  grid-template-columns: 64px minmax(0, 1fr);
+  grid-template-columns: 204px minmax(0, 1fr);
   align-items: start;
   column-gap: 22px;
   margin-bottom: 1.8em;
 }
 
 .profile-entry__body { min-width: 0; }
-.profile-entry__logos { display: grid; gap: 8px; padding-top: 2px; }
+.profile-entry__logos {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 2px;
+}
 .profile-entry__logo-link {
   display: flex;
+  flex: 0 0 auto;
   align-items: center;
   justify-content: center;
   width: 64px;
   height: 64px;
+  overflow: hidden;
   background: #fff;
   border-radius: 3px;
 
@@ -97,14 +104,57 @@ html { scroll-padding-top: 100px; }
 }
 .page__content .profile-entry__logo {
   display: block;
-  width: 64px;
-  height: 64px;
+  width: 100%;
+  height: 100%;
   margin: 0;
   object-fit: contain;
 }
-.profile-entry__logos--stacked {
-  .profile-entry__logo-link:last-child { height: 28px; }
-  .profile-entry__logo-link:last-child .profile-entry__logo { height: 28px; }
+.profile-entry__logo-link--wordmark { width: 128px; }
+.profile-entry__logo-link--aim3-wordmark {
+  position: relative;
+  width: 128px;
+}
+// The complete official logo has white lettering. Show its lettering in black
+// on our white background, retaining the original colored icon in an overlay.
+.profile-entry__logo-link--aim3-wordmark .profile-entry__logo {
+  position: absolute;
+  inset: 0 4px;
+  width: calc(100% - 8px);
+  filter: brightness(0);
+}
+.profile-entry__logo-link--aim3-wordmark .profile-entry__logo-color {
+  filter: none;
+  clip-path: inset(0 70% 0 0);
+  pointer-events: none;
+}
+.profile-entry__logo-link--liverpool-wordmark {
+  position: relative;
+  width: 144px;
+  height: 56px;
+}
+.profile-entry__logo-link--university-wordmark { width: 192px; }
+.profile-entry__logo-link--emblem .profile-entry__logo {
+  object-fit: cover;
+  transform: scale(1.2);
+}
+.profile-entry__logo-link--liverpool-wordmark .profile-entry__logo {
+  position: absolute;
+  top: 50%;
+  height: auto;
+  max-width: none;
+}
+// Frame the Liverpool artwork independently of its source image's white margins.
+.profile-entry__logo-link--liverpool-wordmark .profile-entry__logo {
+  width: 125.8707%;
+  left: -12.851%;
+  transform: translateY(-50%);
+}
+.profile-entry__logo-link--xjtlu-shield {
+  width: 48px;
+  height: 60px;
+}
+.profile-entry__logo-link--xjtlu-shield .profile-entry__logo {
+  height: auto;
 }
 
 .profile-entry__heading {
@@ -280,14 +330,20 @@ body.cv-document { padding-bottom: 0; }
 @media (max-width: 600px) {
   .profile-publication--with-image { grid-template-columns: minmax(0, 1fr); gap: 12px; }
   .profile-publication__figure { width: 100%; max-width: 320px; }
-  .profile-entry--with-logo, .profile-awards li {
+  .profile-entry--with-logo {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 12px;
+  }
+  .profile-awards li {
     grid-template-columns: 48px minmax(0, 1fr);
     column-gap: 14px;
   }
-  .profile-entry__logo-link, .page__content .profile-entry__logo { width: 48px; height: 48px; }
-  .profile-entry__logos--stacked {
-    .profile-entry__logo-link:last-child, .profile-entry__logo-link:last-child .profile-entry__logo { height: 24px; }
-  }
+  .profile-entry__logo-link { width: 48px; height: 48px; }
+  .profile-entry__logo-link--wordmark { width: 128px; }
+  .profile-entry__logo-link--aim3-wordmark { width: 128px; }
+  .profile-entry__logo-link--liverpool-wordmark { width: 144px; height: 48px; }
+  .profile-entry__logo-link--xjtlu-shield { width: 40px; height: 50px; }
+  .profile-entry__logo-link--university-wordmark { width: 172px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
