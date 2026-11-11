@@ -12,7 +12,7 @@ education:
     status: "transferred out"
     logos:
       - name: "University of Liverpool"
-        image: "/images/institutions/liverpool.svg"
+        image: "/images/institutions/liverpool-shield.svg"
         url: "https://www.liverpool.ac.uk/"
       - name: "Xi’an Jiaotong-Liverpool University"
         image: "/images/institutions/xjtlu.svg"

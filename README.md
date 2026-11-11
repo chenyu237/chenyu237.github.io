@@ -73,7 +73,7 @@ The compact awards list and a single award icon were informed by [Hao Chen's hom
 
 The standalone CV page's preview and download/open controls were informed by [Jonas Frey's CV page](https://jonasfrey96.github.io/cv/) and [Bivek Pradhan's CV page](https://bivekpradhan.github.io/cv/).
 
-Institution and lab artwork was copied from the following sources, without recoloring or redrawing. THUNLP uses the image selected by Chenyu; the other assets come from official institution websites.
+Institution and lab artwork was copied from the following sources without redrawing. THUNLP uses the image selected by Chenyu; the other assets come from official institution websites. The Liverpool shield retains its original blue variant, with the SVG's automatic white-on-dark override removed because the homepage displays logos on white backgrounds.
 
 | Local asset | Source |
 | --- | --- |
@@ -82,7 +82,7 @@ Institution and lab artwork was copied from the following sources, without recol
 | `oxford.png` | [Oxford website crest](https://www.cs.ox.ac.uk/apple-touch-icon-114x114.png) |
 | `microsoft.svg` | [Microsoft's downloadable symbol](https://learn.microsoft.com/en-us/entra/identity-platform/media/howto-add-branding-in-apps/ms-symbollockup_mssymbol_19.svg) |
 | `ut-austin.png` | [UT Austin website shield](https://www.utexas.edu/android-chrome-512x512.png) |
-| `liverpool.svg` | [University of Liverpool website shield](https://www.liverpool.ac.uk/rb/assets/icon.svg) |
+| `liverpool-shield.svg` | [University of Liverpool website shield](https://www.liverpool.ac.uk/rb/assets/icon.svg) |
 | `xjtlu.svg` | [Xi’an Jiaotong-Liverpool University website logo](https://www.xjtlu.edu.cn/wp-content/uploads/2024/01/en-header-logo.svg) |
 
 These marks identify the institutions mentioned in Chenyu's education and experience; their ownership remains with the respective institutions.
