@@ -10,7 +10,7 @@ redirect_from:
   - /about.html
 ---
 
-I am an undergraduate student in Informatics at the [School of Information, The University of Texas at Austin](https://ischool.utexas.edu/), concentrating in Human-Centered Data Science.
+I am an undergraduate student in Informatics at the [School of Computing, The University of Texas at Austin](https://computing.utexas.edu/), concentrating in Human-Centered Data Science.
 
 My research interests focus on the capabilities, safety, and societal implications of large language models. I have had the fortune to work with many amazing research mentors and collaborators, including [Yuxiao Ye](https://yeyuxiao.github.io/), [Huiyuan Xie](https://huiyuanxie.github.io/), [Zhiyuan Liu](https://nlp.csai.tsinghua.edu.cn/~lzy/), [Zhenfei Yin](https://yinzhenfei.github.io/), [Wenxuan Wang](https://jarviswang94.github.io/index.html), [Fangzhao Wu](https://www.microsoft.com/en-us/research/people/fangzwu/), [Xing Xie](https://scholar.google.com/citations?user=5EQfAFIAAAAJ), and many others.
 
