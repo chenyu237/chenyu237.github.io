@@ -6,7 +6,8 @@
     <h3>{{ entry.role | escape }} | {{ entry.institution | escape }}{% if entry.group %}, {% if entry.group_url %}<a href="{{ entry.group_url | escape }}">{{ entry.group | escape }}</a>{% else %}{{ entry.group | escape }}{% endif %}{% endif %}</h3>
     <span class="profile-entry__date">{{ entry.dates | escape }}</span>
   </div>
-  <p>Research on <strong>{{ entry.research | escape }}</strong></p>
+  {% assign research_topics = entry.research | split: " and " %}
+  <p>Research on {% for topic in research_topics %}<strong>{{ topic | escape }}</strong>{% unless forloop.last %} and {% endunless %}{% endfor %}</p>
   <p><strong>{% if entry.advisors.size == 1 %}Advisor{% else %}Advisors{% endif %}:</strong> {% for advisor in entry.advisors %}<a href="{{ advisor.url | escape }}">{{ advisor.name | escape }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
   </div>
 </div>
