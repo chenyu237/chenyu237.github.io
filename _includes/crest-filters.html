@@ -1,0 +1,19 @@
+<!-- Remove white raster backgrounds without modifying the original crest files.
+     Dark-mode tints retain every line of the original university artwork. -->
+<svg class="profile-crest-filters" xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="crest-remove-white" color-interpolation-filters="sRGB">
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  -1 -1 -1 0 3" />
+    </filter>
+    <filter id="crest-tsinghua-dark" color-interpolation-filters="sRGB">
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  -1 -1 -1 0 3" result="crest" />
+      <feFlood flood-color="#d9b3f0" result="ink" />
+      <feComposite in="ink" in2="crest" operator="in" />
+    </filter>
+    <filter id="crest-ruc-dark" color-interpolation-filters="sRGB">
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  -1 -1 -1 0 3" result="crest" />
+      <feFlood flood-color="#f6a7b7" result="ink" />
+      <feComposite in="ink" in2="crest" operator="in" />
+    </filter>
+  </defs>
+</svg>

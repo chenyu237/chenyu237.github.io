@@ -277,9 +277,10 @@ html { scroll-padding-top: 100px; }
   position: relative;
   width: var(--experience-logo-size);
   height: var(--experience-logo-size);
+  background: transparent;
 }
-// Frame each mark's visible artwork at 80px in an 88px tile. The source
-// images retain their original pixels and aspect ratios; mobile scales the tile.
+// Solid marks use 80px and circular crests use 86px in an 88px tile to balance
+// their visual weight. Source pixels and aspect ratios remain unchanged.
 .profile-experience .profile-entry__logo {
   position: absolute;
   width: var(--experience-mark-width, 90.9091%);
@@ -291,21 +292,28 @@ html { scroll-padding-top: 100px; }
 }
 // Tsinghua: 1400x600 image; colored crest at (471, 79), 431x431.
 .profile-experience .profile-entry__logo-link--tsinghua-emblem {
-  --experience-mark-width: 295.2964%;
-  --experience-mark-left: -94.8007%;
-  --experience-mark-top: -12.1177%;
+  --experience-mark-width: 317.4436%;
+  --experience-mark-left: -105.6607%;
+  --experience-mark-top: -16.7765%;
 }
 // Renmin: 924x300 image; colored crest at (348, 36), 228x228.
 .profile-experience .profile-entry__logo-link--ruc-emblem {
-  --experience-mark-width: 368.4211%;
-  --experience-mark-left: -134.2105%;
-  --experience-mark-top: -9.8086%;
+  --experience-mark-width: 396.0526%;
+  --experience-mark-left: -148.0263%;
+  --experience-mark-top: -14.2943%;
 }
 // Microsoft: the four squares occupy (1, 1), 19x19 within a 21x21 SVG.
 .profile-experience .profile-entry__logo-link--microsoft-symbol {
   --experience-mark-width: 100.4785%;
   --experience-mark-left: -0.2392%;
   --experience-mark-top: -0.2392%;
+}
+.profile-crest-filters { position: absolute; overflow: hidden; pointer-events: none; }
+.profile-entry__logo-link--tsinghua-emblem .profile-entry__logo,
+.profile-entry__logo-link--ruc-emblem .profile-entry__logo { filter: url(#crest-remove-white); }
+html[data-theme="dark"] {
+  .profile-entry__logo-link--tsinghua-emblem .profile-entry__logo { filter: url(#crest-tsinghua-dark); }
+  .profile-entry__logo-link--ruc-emblem .profile-entry__logo { filter: url(#crest-ruc-dark); }
 }
 
 body.cv-document { padding-bottom: 0; }
