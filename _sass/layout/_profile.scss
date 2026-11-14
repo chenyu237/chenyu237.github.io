@@ -264,7 +264,49 @@ html { scroll-padding-top: 100px; }
   white-space: nowrap;
   font-variant-numeric: tabular-nums;
 }
-.profile-experience { font-size: 0.95em; }
+.profile-experience {
+  --experience-logo-size: 88px;
+  font-size: 0.95em;
+}
+.profile-experience.profile-entry--with-logo {
+  grid-template-columns: var(--experience-logo-size) minmax(0, 1fr);
+  column-gap: 16px;
+}
+.profile-experience .profile-entry__logos { padding-top: 2px; }
+.profile-experience .profile-entry__logo-link {
+  position: relative;
+  width: var(--experience-logo-size);
+  height: var(--experience-logo-size);
+}
+// Frame each mark's visible artwork at 80px in an 88px tile. The source
+// images retain their original pixels and aspect ratios; mobile scales the tile.
+.profile-experience .profile-entry__logo {
+  position: absolute;
+  width: var(--experience-mark-width, 90.9091%);
+  height: auto;
+  max-width: none;
+  left: var(--experience-mark-left, 4.5455%);
+  top: var(--experience-mark-top, 4.5455%);
+  transform: none;
+}
+// Tsinghua: 1400x600 image; colored crest at (471, 79), 431x431.
+.profile-experience .profile-entry__logo-link--tsinghua-emblem {
+  --experience-mark-width: 295.2964%;
+  --experience-mark-left: -94.8007%;
+  --experience-mark-top: -12.1177%;
+}
+// Renmin: 924x300 image; colored crest at (348, 36), 228x228.
+.profile-experience .profile-entry__logo-link--ruc-emblem {
+  --experience-mark-width: 368.4211%;
+  --experience-mark-left: -134.2105%;
+  --experience-mark-top: -9.8086%;
+}
+// Microsoft: the four squares occupy (1, 1), 19x19 within a 21x21 SVG.
+.profile-experience .profile-entry__logo-link--microsoft-symbol {
+  --experience-mark-width: 100.4785%;
+  --experience-mark-left: -0.2392%;
+  --experience-mark-top: -0.2392%;
+}
 
 body.cv-document { padding-bottom: 0; }
 .cv-document .page__footer { position: static; float: none; }
@@ -344,6 +386,13 @@ body.cv-document { padding-bottom: 0; }
   .profile-entry__logo-link--liverpool-wordmark { width: 144px; height: 48px; }
   .profile-entry__logo-link--xjtlu-shield { width: 40px; height: 50px; }
   .profile-entry__logo-link--university-wordmark { width: 172px; }
+  .profile-experience { --experience-logo-size: 72px; }
+  .profile-experience.profile-entry--with-logo { column-gap: 14px; row-gap: 0; }
+}
+
+@media (max-width: 380px) {
+  .profile-experience { --experience-logo-size: 64px; }
+  .profile-experience.profile-entry--with-logo { column-gap: 12px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -50,10 +50,7 @@ experience:
       - name: "Tsinghua University"
         image: "/images/institutions/tsinghua-emblem.jpg"
         url: "https://www.tsinghua.edu.cn/"
-        style: "emblem"
-      - name: "THUNLP, Tsinghua University"
-        image: "/images/institutions/thunlp-logo.png"
-        url: "https://nlp.csai.tsinghua.edu.cn/"
+        style: "tsinghua-emblem"
     dates: "Jul. 2026 – Present"
     research: "Social intelligence and legal AI."
     advisors:
@@ -68,10 +65,9 @@ experience:
     group: "Department of Engineering Science"
     group_url: "https://eng.ox.ac.uk/"
     logos:
-      - name: "University of Oxford — Department of Engineering Science"
-        image: "/images/institutions/oxford-engineering.svg"
-        url: "https://eng.ox.ac.uk/"
-        style: "university-wordmark"
+      - name: "University of Oxford"
+        image: "/images/institutions/oxford.png"
+        url: "https://www.ox.ac.uk/"
     dates: "Oct. 2025 – Sept. 2026"
     research: "LLM agents and computational social science."
     advisors:
@@ -85,11 +81,7 @@ experience:
       - name: "Renmin University of China"
         image: "/images/institutions/ruc-emblem.png"
         url: "https://www.ruc.edu.cn/"
-        style: "emblem"
-      - name: "AIM3 Lab, Renmin University of China"
-        image: "/images/institutions/aim3-wordmark.png"
-        url: "https://www.ruc-aim3.com/"
-        style: "aim3-wordmark"
+        style: "ruc-emblem"
     dates: "Aug. 2025 – May 2026"
     research: "Cultural LLMs."
     advisors:
@@ -104,6 +96,7 @@ experience:
       - name: "Microsoft Research Asia"
         image: "/images/institutions/microsoft.svg"
         url: "https://www.microsoft.com/en-us/research/lab/microsoft-research-asia/"
+        style: "microsoft-symbol"
     dates: "Mar. 2026 – Jul. 2026"
     research: "Responsible AI and recommender systems."
     advisors:
